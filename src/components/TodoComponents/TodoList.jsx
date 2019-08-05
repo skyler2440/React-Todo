@@ -5,8 +5,12 @@ const TodoList = props => {
   console.log("todolist.jsx props", props);
   return <div className="todo-list">
       {props.todoData.map(mres =>(
-          <Todo key={mres.id} todo={mres.task} />
+        <>
+          <Todo key={mres.id} id={mres.id} todo={mres.task} toggleComplete={props.toggleComplete}/>
+          </>
       ))}
+          <button className='todo-complete' onClick={props.clearComplete}>Clear Completed</button>
+
   </div>;
 };
 

@@ -28,7 +28,38 @@ class App extends React.Component {
       todoData
     };
   }
+  toggleComplete = id => {
+    console.log('toggle works', id)
+    this.setState({
+      todoData: todoData.map(mres => {
+        console.log('toggleMapResults', mres.id)
+        if(mres.id === id) {
+          return{
+            ...mres,
+            completed: !mres.completed
+          }
+        } else {
+          return mres;
+        }
+      })
+    })
+  }
 
+  addTodo = todoTask => {
+    const newTodo = {
+      task: todoTask,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      todoData: [...this.state.todoData, newTodo]
+    })
+  }
+  clearComplete = () => {
+    this.setState({
+      todoData: this.state.todoData.filter(res => !res.completed)
+    })
+  }
   render() {
     console.log("mock todo data array", this.state.todoData);
     return (
@@ -36,8 +67,8 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <p>{}</p>
         <Todo />
-        <TodoList todoData={this.state.todoData}/>
-        <TodoForm />
+        <TodoList todoData={this.state.todoData} toggleComplete={this.toggleComplete} clearComplete={this.clearComplete}/>
+        <TodoForm addTodo={this.addTodo}/>
       </div>
     );
   }

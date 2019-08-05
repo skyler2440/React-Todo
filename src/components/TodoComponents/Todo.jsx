@@ -3,7 +3,7 @@ import React from "react";
 const Todo = props => {
   console.log("todoFile props", props);
   return (
-      <div>
+      <div onClick={() => props.toggleComplete(props.id)} >
 <p>{props.todo}</p>
       </div>
   );
