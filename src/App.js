@@ -1,5 +1,6 @@
 import React from 'react';
-import TodoForm from './components/TodoComponents/TodoForm';
+import TodoForm from './components/TodoComponents/TodoForm.jsx';
+import TodoList from './components/TodoComponents/TodoList.jsx';
 
 const todoData = [
   {
@@ -29,10 +30,14 @@ constructor(){
 
 
   render() {
-    console.log('tododata', this.state.todoData)
+    console.log('mock todo data array', this.state.todoData)
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <p>
+          {}
+        </p>
+        <TodoList />
         <TodoForm />
       </div>
     );
