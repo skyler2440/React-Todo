@@ -3,7 +3,11 @@ import Todo from "./Todo.jsx";
 
 const TodoList = props => {
   console.log("todolist.jsx props", props);
-  return <div className="todo-list">{/* setup map */}</div>;
+  return <div className="todo-list">
+      {props.todoData.map(mres =>(
+          <Todo key={mres.id} todo={mres.task} />
+      ))}
+  </div>;
 };
 
 export default TodoList;

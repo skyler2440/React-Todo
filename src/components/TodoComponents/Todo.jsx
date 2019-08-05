@@ -2,7 +2,11 @@ import React from "react";
 
 const Todo = props => {
   console.log("todoFile props", props);
-  return <div />;
+  return (
+      <div>
+<p>{props.todo}</p>
+      </div>
+  );
 };
 export default Todo;
 

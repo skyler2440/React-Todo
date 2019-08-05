@@ -36,7 +36,7 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <p>{}</p>
         <Todo />
-        <TodoList todos={this.state.todoData}/>
+        <TodoList todoData={this.state.todoData}/>
         <TodoForm />
       </div>
     );
