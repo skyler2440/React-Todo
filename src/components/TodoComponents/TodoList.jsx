@@ -1,14 +1,10 @@
-import React from 'react'
-import Todo from './Todo.jsx'
+import React from "react";
+import Todo from "./Todo.jsx";
 
 const TodoList = props => {
-    console.log('todolist.jsx props', props)
-    return(
-        <div className='todo-list'>
-            {/* setup map */}
-        </div>
-    )
-}
+  console.log("todolist.jsx props", props);
+  return <div className="todo-list">{/* setup map */}</div>;
+};
 
 export default TodoList;
 

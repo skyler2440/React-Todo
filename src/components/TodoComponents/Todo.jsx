@@ -1,15 +1,10 @@
-import React from 'react';
+import React from "react";
 
 const Todo = props => {
-console.log('todoFile props', props)
-return(
-    <div></div>
-)
-}
+  console.log("todoFile props", props);
+  return <div />;
+};
 export default Todo;
-
-
-
 
 // const Item = props => {
 //   return (
